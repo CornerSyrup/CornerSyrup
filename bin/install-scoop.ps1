@@ -8,16 +8,14 @@ scoop install 7zip
 scoop install 7zip -g
 
 scoop install adb -g
-scoop install arduino -g
 scoop install cmder-full -g
-scoop install dart -g
 scoop install dotnet-sdk -g
-scoop install draw.ioo -g
-scoop install flutter -g
+scoop install draw.io -g
 scoop install go -g
 scoop install make -g
-scoop install maven -g
-scoop install notionjs-lts -g
+scoop install mingw-winlibs -g
+scoop install nodejs-lts -g
+scoop install python -g
 scoop install sudo -g
 scoop install vim -g
 
