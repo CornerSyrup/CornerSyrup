@@ -7,22 +7,46 @@ scoop install git -g
 scoop install 7zip
 scoop install 7zip -g
 
-scoop install adb -g
-scoop install android-sdk -g
-scoop install arduino -g
 scoop install cmder-full -g
-scoop install dart -g
 scoop install dotnet-sdk -g
-scoop install draw.ioo -g
-scoop install flutter -g
-scoop install github -g
+scoop install draw.io -g
 scoop install go -g
 scoop install make -g
-scoop install maven -g
-scoop install notionjs-lts -g
+scoop install mingw-winlibs -g
+scoop install nodejs-lts -g
+scoop install python -g
+scoop install sudo -g
+scoop install vim -g
+
+scoop bucket add extras
+scoop install github -g
+scoop install libreoffice-stable -g
+scoop install notion -g
 scoop install obs-studio -g
 scoop install postman -g
 scoop install signal -g
-scoop install sudo -g
-scoop install vim -g
+scoop install vcredist2019 -g
 scoop install vscode -g
+
+scoop bucket add java
+scoop install maven -g
+scoop install openjdk8-redhat -g
+scoop install openjdk11 -g
+
+# Adnroid
+scoop install android-sdk -g
+scoop install adb -g
+
+# JetBrain
+scoop bucket add jetbrains
+scoop install IntelliJ-IDEA -g
+scoop install DotPeek -g
+scoop install YouTrack -g
+
+scoop bucket add php
+scoop install php -g
+scoop install php-xdebug -g
+scoop install composer -g
+
+scoop bucket add nerd-fonts
+scoop install FiraCode-NF -g
