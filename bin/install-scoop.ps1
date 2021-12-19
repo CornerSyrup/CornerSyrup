@@ -35,5 +35,10 @@ scoop install maven
 scoop install openjdk8-redhat
 scoop install openjdk11
 
+scoop bucket add php
+scoop install php
+scoop install php-xdebug
+scoop install composer
+
 scoop bucket add nerd-fonts
 scoop install FiraCode-NF
