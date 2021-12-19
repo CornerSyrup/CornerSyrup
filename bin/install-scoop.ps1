@@ -26,3 +26,6 @@ scoop install signal -g
 scoop install sudo -g
 scoop install vim -g
 scoop install vscode -g
+
+scoop bucket add nerd-fonts
+scoop install FiraCode-NF
