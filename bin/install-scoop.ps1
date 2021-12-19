@@ -7,7 +7,6 @@ scoop install git -g
 scoop install 7zip
 scoop install 7zip -g
 
-scoop install adb -g
 scoop install cmder-full -g
 scoop install dotnet-sdk -g
 scoop install draw.io -g
@@ -20,7 +19,6 @@ scoop install sudo -g
 scoop install vim -g
 
 scoop bucket add extras
-scoop install android-sdk -g
 scoop install github -g
 scoop install libreoffice-stable -g
 scoop install notion -g
@@ -34,6 +32,10 @@ scoop bucket add java
 scoop install maven
 scoop install openjdk8-redhat
 scoop install openjdk11
+
+# Adnroid
+scoop install android-sdk -g
+scoop install adb -g
 
 scoop bucket add php
 scoop install php
