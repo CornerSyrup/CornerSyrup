@@ -29,18 +29,18 @@ scoop install vcredist2019 -g
 scoop install vscode -g
 
 scoop bucket add java
-scoop install maven
-scoop install openjdk8-redhat
-scoop install openjdk11
+scoop install maven -g
+scoop install openjdk8-redhat -g
+scoop install openjdk11 -g
 
 # Adnroid
 scoop install android-sdk -g
 scoop install adb -g
 
 scoop bucket add php
-scoop install php
-scoop install php-xdebug
-scoop install composer
+scoop install php -g
+scoop install php-xdebug -g
+scoop install composer -g
 
 scoop bucket add nerd-fonts
-scoop install FiraCode-NF
+scoop install FiraCode-NF -g
