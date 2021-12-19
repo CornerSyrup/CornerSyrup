@@ -37,6 +37,12 @@ scoop install openjdk11 -g
 scoop install android-sdk -g
 scoop install adb -g
 
+# JetBrain
+scoop bucket add jetbrains
+scoop install IntelliJ-IDEA -g
+scoop install DotPeek -g
+scoop install YouTrack -g
+
 scoop bucket add php
 scoop install php -g
 scoop install php-xdebug -g
