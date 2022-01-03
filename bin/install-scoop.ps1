@@ -10,6 +10,7 @@ scoop install 7zip -g
 scoop install cmder-full -g
 scoop install dotnet-sdk -g
 scoop install draw.io -g
+scoop install ffmpeg -g
 scoop install go -g
 scoop install make -g
 scoop install mingw-winlibs -g # Haskell need its gcc
