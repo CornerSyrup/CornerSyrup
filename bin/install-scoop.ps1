@@ -28,6 +28,7 @@ scoop install signal -g
 scoop install vcredist2019 -g
 scoop install vscode -g
 
+# Java
 scoop bucket add java
 scoop install maven -g
 scoop install openjdk8-redhat -g
@@ -43,10 +44,12 @@ scoop install IntelliJ-IDEA -g
 scoop install DotPeek -g
 scoop install YouTrack -g
 
+# PHP
 scoop bucket add php
 scoop install php -g
 scoop install php-xdebug -g
 scoop install composer -g
 
+# Fonts
 scoop bucket add nerd-fonts
 scoop install FiraCode-NF -g
