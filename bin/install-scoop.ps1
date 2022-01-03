@@ -12,7 +12,7 @@ scoop install dotnet-sdk -g
 scoop install draw.io -g
 scoop install go -g
 scoop install make -g
-scoop install mingw-winlibs -g
+scoop install mingw-winlibs -g # Haskell need its gcc
 scoop install nodejs-lts -g
 scoop install python -g
 scoop install sudo -g
@@ -27,6 +27,12 @@ scoop install postman -g
 scoop install signal -g
 scoop install vcredist2019 -g
 scoop install vscode -g
+
+# Haskell
+scoop install haskell@8.10.7 -g
+scoop install haskell-cabal -g
+scoop install stack -g
+
 
 # Java
 scoop bucket add java
