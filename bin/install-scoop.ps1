@@ -36,6 +36,7 @@ scoop install stack -g
 
 # Java
 scoop bucket add java
+scoop install kotlin -g
 scoop install maven -g
 scoop install openjdk8-redhat -g
 scoop install openjdk11 -g
