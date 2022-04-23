@@ -36,6 +36,7 @@ function Invoke-WithBucket {
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+Push-Location ~/scoop/shims
 
 # Basic
 scoop bucket add extras
@@ -84,3 +85,5 @@ if ($php) {
 if ($optionals) {
     @("vcredist2019") | ForEach-Object { Install-Package -name $_ -global }
 }
+
+Pop-Location
