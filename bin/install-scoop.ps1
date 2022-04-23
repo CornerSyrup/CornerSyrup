@@ -47,7 +47,7 @@ Invoke-WithBucket -bucket "nerd-fonts" { Install-Package -name "FiraCode-NF" -gl
 
 # Tools
 @("cmder-full", "ffmpeg", "mingw-winlibs", "sudo", "vim", "vscode") | ForEach-Object { Install-Package -name $_ -global }
-@("signal") | ForEach-Object { Install-Package -name $_ }
+@("signal", "bitwarden", "googlechrome" , "imagemagick", "youtube-dl") | ForEach-Object { Install-Package -name $_ }
 
 # Extras
 if ($extras) {
@@ -56,7 +56,7 @@ if ($extras) {
 
 # Languages
 if ($language) {
-    @("dotnet-sdk", "go", "nodejs-lts", "python") | ForEach-Object { Install-Package -name $_ -global }
+    @("dotnet-sdk", "go", "nodejs-lts", "python", "terraform") | ForEach-Object { Install-Package -name $_ -global }
 }
 
 # Dev Env
