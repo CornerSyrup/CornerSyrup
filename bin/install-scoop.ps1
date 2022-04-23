@@ -50,40 +50,15 @@ Invoke-WithBucket -bucket "nerd-fonts" { Install-Package -name "FiraCode-NF" -gl
 @("cmder-full", "ffmpeg", "mingw-winlibs", "sudo", "vim", "vscode") | ForEach-Object { Install-Package -name $_ -global }
 @("signal", "bitwarden", "googlechrome" , "imagemagick", "youtube-dl") | ForEach-Object { Install-Package -name $_ }
 
-# Extras
-if ($extras) {
-    @("draw.io", "notion", "libreoffice-stable", "obs-studio") | ForEach-Object { Install-Package -name $_ -global }
-}
-
-# Languages
-if ($language) {
-    @("dotnet-sdk", "go", "nodejs-lts", "python", "terraform") | ForEach-Object { Install-Package -name $_ -global }
-}
-
-# Dev Env
-if ($devEnv) {
-    @("make", "github", "postman") | ForEach-Object { Install-Package -name $_ -global }
-}
-
-# Haskell
-if ($haskell) {
-    @("haskell@8.10.7", "haskell-cabal", "stack") | ForEach-Object { Install-Package -name $_ -global }
-}
-
-# Java
-if ($java) {
-    scoop bucket add java
-    @("kotlin", "maven", "openjdk8-redhat", "openjdk11") | ForEach-Object { Install-Package -name $_ -global }
-}
-
-# PHP
-if ($php) {
-    @("php", "php-xdebug", "composer") | ForEach-Object { Install-Package -name $_ -global }
-}
-
-# Optionals
-if ($optionals) {
-    @("vcredist2019") | ForEach-Object { Install-Package -name $_ -global }
+# Modules
+switch ($true) {    
+    $extras { @("draw.io", "notion", "libreoffice-stable", "obs-studio") | ForEach-Object { Install-Package -name $_ -global } }
+    $language { @("dotnet-sdk", "go", "nodejs-lts", "python", "terraform") | ForEach-Object { Install-Package -name $_ -global } }
+    $devEnv { @("make", "github", "postman") | ForEach-Object { Install-Package -name $_ -global } }
+    $haskell { @("haskell@8.10.7", "haskell-cabal", "stack") | ForEach-Object { Install-Package -name $_ -global } }
+    $java { scoop bucket add java; @("kotlin", "maven", "openjdk8-redhat", "openjdk11") | ForEach-Object { Install-Package -name $_ -global } }
+    $php { @("php", "php-xdebug", "composer") | ForEach-Object { Install-Package -name $_ -global } }
+    $optionals { @("vcredist2019") | ForEach-Object { Install-Package -name $_ -global } }
 }
 
 Pop-Location
