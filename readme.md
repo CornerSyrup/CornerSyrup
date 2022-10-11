@@ -1,3 +1,0 @@
-# KleinChiu
-
-Hello world!
