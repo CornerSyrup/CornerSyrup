@@ -2,6 +2,18 @@
 
 Hello world!
 
+## Overview
+
+![KleinChiu](https://github-readme-stats.vercel.app/api?username=kleinchiu&show_icons=true&theme=nord)
+![KleinChiu](https://github-readme-streak-stats.herokuapp.com/?user=kleinchiu&theme=nord)
+
+## Contact
+
+[![](https://img.shields.io/badge/LinkedIn-KleinChiu-0A66C2?logo=LinkedIn&logoColor=0A66C2)](https://jp.linkedin.com/in/klein-c-2644851b0)
+[![](https://img.shields.io/badge/Medium-%40kleinc%2E-000000?logo=Medium&logoColor=000000)](https://medium.com/%40kleinc%2E)
+[![](https://img.shields.io/badge/GitHub-KleinChiu-222222?logo=GitHub&logoColor=222222)](https://kleinchiu.github.io/KleinChiu/)
+[![](https://img.shields.io/badge/Adobe%20Lightroom-Klein%20Chiu-31A8FF?logo=Adobe%20Lightroom&logoColor=31A8FF)](https://kleinchiu1030.myportfolio.com)
+
 ## Skills
 
 ### JavaScript
