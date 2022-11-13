@@ -1,64 +1,107 @@
+<#
+.DESCRIPTION
+Install scoop and some package sets.
+MUST run with administration permission.
+#>
+
 [CmdletBinding()]
 param (
-    [switch] $extras = $false,
-    [switch] $language = $false,
-    [switch] $devEnv = $false,
-    [switch] $haskell = $false,
-    [switch] $java = $false,
-    [switch] $php = $false,
-    [switch] $optionals = $false
+    # Whether to install basic sets. Default true.
+    [switch] $Basic,
+    # Whether to install fonts. Default true.
+    [switch] $Fonts,
+    # Modules to be installed with scoop.
+    [Parameter(ValueFromPipeline)]
+    [ValidateSet("Daily", "CLI", "Extra", "DevEnv", "DevOps", "NodeJS", "Python", "DotNet", "Go", "Haskell", "Java", "PHP")]
+    [ValidateNotNullOrEmpty]
+    [string[]] $Modules,
+    # Whether to install packages globally. Default false.
+    [switch] $Globally = $false
 )
 
 function Install-Package {
     param (
-        [string]$name,
-        [switch]$global = $false
+        [string]$Name
     )
 
-    if ($global) {
-        scoop install $name -g
+    if ($Globally) {
+        Write-Host scoop install $Name -g
     }
     else {
-        scoop install $name
+        Write-Host scoop install $Name
     }
+}
+
+function Add-Bucket {
+    param (
+        [string] $Name
+    )
+    scoop bucket add $Name
 }
 
 function Invoke-WithBucket {
     param (
-        [string] $bucket,
-        [scriptblock[]] $block
+        [string] $Bucket,
+        [scriptblock[]] $Block
     )
-    scoop bucket add $bucket
-    $block | ForEach-Object { $_.Invoke() }
-    scoop bucket rm $bucket
+    scoop bucket add $Bucket
+    $Block | ForEach-Object { $_.Invoke() }
+    scoop bucket rm $Bucket
 }
 
-Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+function Convert-Bucket {
+    param (
+        [string]$Module
+    )
+    switch ($Module) {
+        Java { @("java") }
+        Default {}
+    }
+}
 
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+
+function Convert-Package {
+    param (
+        [string]$Module
+    )
+    switch ($Module) {
+        Daily { @("signal", "bitwarden", "vscode", "notion") }
+        CLI { @("cmder-full", "ffmpeg", "sudo", "vim", "imagemagick", "youtube-dl", "vcredist2019", "lynx") }
+        Extra { @("libreoffice-stable", "obs-studio", "calibre-normal") }
+        DevEnv { @("vscode", "github", "postman", "mingw-winlibs") }
+
+        DevOps { @("terraform") }
+        NodeJS { @("nodejs-lts", "pnpm") }
+        Python { @("python") }
+        DotNet { @("dotnet-sdk") }
+        Go { @("go") }
+        Haskell { @("mingw-winlibs", "make", "haskell@8.10.7", "haskell-cabal", "stack") }
+        Java { @("kotlin", "scala", "maven", "openjdk8-redhat", "openjdk11") }
+        PHP { @("php", "php-xdebug", "composer") }
+    }
+}
+
+if (-not($Basic -and (Test-Path "~/scoop/shims"))) {
+    Write-Error "No scoop installed, please set Basic to true to install scoop"
+}
+
+if ($Basic) {
+    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+    Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+}
+
 Push-Location ~/scoop/shims
 
-# Basic
-scoop bucket add extras
-@("git", "aria2", "7zip") | ForEach-Object { Install-Package -name $_ -global }
-@("7zip") | ForEach-Object { Install-Package -name $_ -global }
-
-# Fonts
-Invoke-WithBucket -bucket "nerd-fonts" { Install-Package -name "FiraCode-NF" -global }
-
-# Tools
-@("cmder-full", "ffmpeg", "mingw-winlibs", "sudo", "vim", "vscode") | ForEach-Object { Install-Package -name $_ -global }
-@("signal", "bitwarden", "googlechrome" , "imagemagick", "youtube-dl") | ForEach-Object { Install-Package -name $_ }
-
-# Modules
-switch ($true) {    
-    $extras { @("draw.io", "notion", "libreoffice-stable", "obs-studio") | ForEach-Object { Install-Package -name $_ -global } }
-    $language { @("dotnet-sdk", "go", "nodejs-lts", "python", "terraform") | ForEach-Object { Install-Package -name $_ -global } }
-    $devEnv { @("make", "github", "postman") | ForEach-Object { Install-Package -name $_ -global } }
-    $haskell { @("haskell@8.10.7", "haskell-cabal", "stack") | ForEach-Object { Install-Package -name $_ -global } }
-    $java { scoop bucket add java; @("kotlin", "maven", "openjdk8-redhat", "openjdk11") | ForEach-Object { Install-Package -name $_ -global } }
-    $php { @("php", "php-xdebug", "composer") | ForEach-Object { Install-Package -name $_ -global } }
-    $optionals { @("vcredist2019") | ForEach-Object { Install-Package -name $_ -global } }
+if ($Basic) {
+    Add-Bucket extras
+    @("git", "aria2", "7zip") | ForEach-Object { Install-Package -Globally -Name $_ }
 }
+
+if ($Fonts) {
+    Invoke-WithBucket -Bucket "nerd-fonts" { Install-Package -Globally -Name "FiraCode-NF" }
+}
+
+$Modules | ForEach-Object { Convert-Bucket $_ } | Sort-Object -Unique | ForEach-Object { Add-Bucket $_ }
+$Modules | ForEach-Object { Convert-Package $_ } | Sort-Object -Unique | ForEach-Object { Install-Package -Name $_ }
 
 Pop-Location
