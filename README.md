@@ -56,9 +56,13 @@ Hello world!
 
 ![](https://img.shields.io/badge/Docker-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-2496ED?logo=Docker&logoColor=2496ED)
 ![](https://img.shields.io/badge/Terraform-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-7B42BC?logo=Terraform&logoColor=7B42BC)
+![](https://img.shields.io/badge/Ansible-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-EE0000?logo=Ansible&logoColor=EE0000)
 ![](https://img.shields.io/badge/PostgreSQL-%E2%98%85%E2%98%85%E2%98%85%E2%98%86%E2%98%86-4169E1?logo=PostgreSQL&logoColor=4169E1)
 ![](https://img.shields.io/badge/MySQL-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-4479A1?logo=MySQL&logoColor=4479A1)
 ![](https://img.shields.io/badge/Microsoft%20SQL%20Server-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-CC2927?logo=Microsoft%20SQL%20Server&logoColor=CC2927)
+![](https://img.shields.io/badge/MongoDB-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-47A248?logo=MongoDB&logoColor=47A248)
+![](https://img.shields.io/badge/CockroachDB-%E2%98%85%E2%98%86%E2%98%86%E2%98%86%E2%98%86-6933FF?logo=Cockroach%20Labs&logoColor=6933FF)
+![](https://img.shields.io/badge/Dgraph-%E2%98%85%E2%98%86%E2%98%86%E2%98%86%E2%98%86-E50695?logo=Dgraph&logoColor=E50695)
 ![](https://img.shields.io/badge/Apache-%E2%98%85%E2%98%85%E2%98%86%E2%98%86%E2%98%86-D22128?logo=Apache&logoColor=D22128)
 
 ### Framework
