@@ -4,8 +4,9 @@ Hello world!
 
 ## Overview
 
-![KleinChiu](https://github-readme-stats.vercel.app/api?username=kleinchiu&show_icons=true&theme=nord)
-![KleinChiu](https://github-readme-streak-stats.herokuapp.com/?user=kleinchiu&theme=nord)
+[![KleinChiu](https://github-readme-stats.vercel.app/api?username=kleinchiu&show_icons=true&theme=nord)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub Streak](https://streak-stats.demolab.com/?user=kleinchiu&theme=nord)](https://git.io/streak-stats)
+[![KleinChiu](https://github-readme-stats.vercel.app/api/top-langs/?username=kleinchiu&langs_count=10&layout=compact&card_width=445&theme=nord)](https://github.com/anuraghazra/github-readme-stats)
 
 ## Contact
 
