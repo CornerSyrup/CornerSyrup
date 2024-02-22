@@ -10,9 +10,10 @@ Hello world!
 
 ## Contact
 
+[![](https://img.shields.io/badge/GitHub-CornerSyrup-222222?logo=GitHub&logoColor=222222)](https://cornersyrup.github.io/CornerSyrup/)
+[![](https://img.shields.io/badge/OpenStreetMap-CornerSyrup-7EBC6F?logo=openstreetmap&logoColor=7EBC6F)](https://www.openstreetmap.org/user/CornerSyrup)
 [![](https://img.shields.io/badge/LinkedIn-KleinChiu-0A66C2?logo=LinkedIn&logoColor=0A66C2)](https://jp.linkedin.com/in/klein-c-2644851b0)
 [![](https://img.shields.io/badge/Medium-%40kleinc%2E-000000?logo=Medium&logoColor=000000)](https://medium.com/%40kleinc%2E)
-[![](https://img.shields.io/badge/GitHub-KleinChiu-222222?logo=GitHub&logoColor=222222)](https://kleinchiu.github.io/KleinChiu/)
 [![](https://img.shields.io/badge/Adobe%20Lightroom-Klein%20Chiu-31A8FF?logo=Adobe%20Lightroom&logoColor=31A8FF)](https://kleinchiu1030.myportfolio.com)
 
 ## Skills
